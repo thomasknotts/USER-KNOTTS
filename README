@@ -31,12 +31,10 @@ instructions.
 
 1. Obtain LAMMPS for lammps.sandia.gov
 2. Uncompress the .tar file.
-3. Copy pair_lj_cut_eten.cpp, pair_lj_cut_eten.h, dihedral_eten.cpp,
-   dihedral_eten.h, fix_hwall.cpp, fix_hwall,h, fix_hwall_hydro.cpp, and
-   fix_hwall_hydro.h to the src/ directory.
-4. Change to the src/ directory.
-5. Type make clean-all
-6. Type make yes-molecule to include the package for site types
+3. Copy the USER-KNOTTS folder to the src/ directory.
+4. Type make clean-all
+5. Type make yes-molecule to include the package for site types
+6. Type make yes-user-knotts
 7. Type make serial
 
 The program will compile.
