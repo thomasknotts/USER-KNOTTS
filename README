@@ -1,15 +1,15 @@
 /* Copyright (C) 2017 Thomas Allen Knotts IV - All Rights Reserved          */
-/* This file is part of the program eten-lammps which adds functionality    */
+/* This file is part of the program USER-KNOTTS which adds functionality to */
 /* the program LAMMPS.  LAMMPS is distributed under the GNU General Public  */
 /* License, and eten-lammps, being based on LAMMPS source files, is         */
 /* congruent with this.                                                     */
 /*                                                                          */
-/* eten-lammps is free software: you can redistribute it and/or modify      */
+/* USER-KNOTTS is free software: you can redistribute it and/or modify      */
 /* it under the terms of the GNU General Public License as published by     */
 /* the Free Software Foundation, either version 3 of the License, or        */
 /* (at your option) any later version.                                      */
 /*                                                                          */
-/* eten-lammps is distributed in the hope that it will be useful,           */
+/* USER-KNOTTS is distributed in the hope that it will be useful,           */
 /* but WITHOUT ANY WARRANTY; without even the implied warranty of           */
 /* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            */
 /* GNU General Public License for more details.                             */
@@ -22,7 +22,7 @@ Compiling
 ===========
 
 The .cpp and .h files are needed to compile LAMMPS to use the Go model of
-Karanicolas and Brooks.  
+Karanicolas and Brooks and the coarse grain surface model of Wei and Knotts.  
 
 In general, the code is complied as described in the LAMMPS documentation.
 LAMMPS is constructed so that new functionality can be added by simply
@@ -31,11 +31,12 @@ instructions.
 
 1. Obtain LAMMPS for lammps.sandia.gov
 2. Uncompress the .tar file.
-3. Copy pair_lj_cut_eten.cpp, pair_lj_cut_eten.h, dihedral_eten.cpp, and
-   dihedral_eten.h to the src/ directory.
+3. Copy pair_lj_cut_eten.cpp, pair_lj_cut_eten.h, dihedral_eten.cpp,
+   dihedral_eten.h, fix_hwall.cpp, fix_hwall,h, fix_hwall_hydro.cpp, and
+   fix_hwall_hydro.h to the src/ directory.
 4. Change to the src/ directory.
 5. Type make clean-all
-6. Type make yes-molecule to include package for site types
+6. Type make yes-molecule to include the package for site types
 7. Type make serial
 
 The program will compile.
@@ -43,23 +44,4 @@ The program will compile.
 You can include other LAMMPS packages, such as REPLICA, if desired.
 You can also compile with mpi or other options.
 
-===========
-Examples
-===========
-The 'example' folder contained lammps input files for PDB IDs 1bdd and
-1igt.  Representative outputs are also found to check your 
-lammps implementation.
 
------
-1bdd
------
-These files were generated from the go2lammps tool available on the 
-svn server.  The PDB was uploaded to the MMTSB Go-model builder and 
-the go2lammps tool was used on these files.
-
------
-1igt
------
-This molecule is an antibody, and the lammps files were generated 
-by hand because the MMTSB Go-model builder had trouble converting
-the large, multi-chain molecule.
